@@ -1,115 +1,197 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
-/*
-void main() {
-  runApp(MyApp());
+//import 'package:login_ui_design/signup_screen.dart';
+
+import 'SignUpScreen.dart';
+
+class LoginScreen extends StatefulWidget {
+  @override
+  State<StatefulWidget> createState() => StartState();
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
-
+class StartState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-         backgroundColor: Color.fromARGB(255, 30, 159, 170),
-        body: SafeArea(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            
-            children: [
-              
-             
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-}
-*/
-
-
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-
-  // This widget is the home page of your application. It is stateful, meaning
-  // that it has a State object (defined below) that contains fields that affect
-  // how it looks.
-
-  // This class is the configuration for the state. It holds the values (in this
-  // case the title) provided by the parent (in this case the App widget) and
-  // used by the build method of the State. Fields in a Widget subclass are
-  // always marked "final".
-
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
-      _counter++;
-    });
+    return initWidget();
   }
 
-  @override
-  Widget build(BuildContext context) {
-    // This method is rerun every time setState is called, for instance as done
-    // by the _incrementCounter method above.
-    //
-    // The Flutter framework has been optimized to make rerunning build methods
-    // fast, so that you can just rebuild anything that needs updating rather
-    // than having to individually change instances of widgets.
+  initWidget() {
     return Scaffold(
-      appBar: AppBar(
-        // Here we take the value from the MyHomePage object that was created by
-        // the App.build method, and use it to set our appbar title.
-        title: Text(widget.title),
-      ),
-      body: Center(
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
+      body: SingleChildScrollView(
         child: Column(
-          // Column is also a layout widget. It takes a list of children and
-          // arranges them vertically. By default, it sizes itself to fit its
-          // children horizontally, and tries to be as tall as its parent.
-          //
-          // Invoke "debug painting" (press "p" in the console, choose the
-          // "Toggle Debug Paint" action from the Flutter Inspector in Android
-          // Studio, or the "Toggle Debug Paint" command in Visual Studio Code)
-          // to see the wireframe for each widget.
-          //
-          // Column has various properties to control how it sizes itself and
-          // how it positions its children. Here we use mainAxisAlignment to
-          // center the children vertically; the main axis here is the vertical
-          // axis because Columns are vertical (the cross axis would be
-          // horizontal).
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
+          children: [
+            Container(
+              height: 300,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.only(bottomLeft: Radius.circular(90)),
+                color: new Color(0xFF0E712C),
+                gradient: LinearGradient(colors: [Color(0xFF0E712C), Color(0xFF0E712C)],
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
+                ),
+              ),
+              child: Center(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Container(
+                        margin: EdgeInsets.only(top: 50),
+                        child: Image.asset(
+                          "images/logo2.png",
+                          height: 150,
+                          width: 200,
+                        ),
+                      ),
+                      Container(
+                        margin: EdgeInsets.only(right: 20, top: 20),
+                        alignment: Alignment.bottomRight,
+                        child: Text(
+                          "Login",
+                          style: TextStyle(
+                              fontSize: 20,
+                              color: Colors.white
+                          ),
+                        ),
+                      )
+                    ],
+                  )
+              ),
             ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
+
+            Container(
+              alignment: Alignment.center,
+              margin: EdgeInsets.only(left: 20, right: 20, top: 70),
+              padding: EdgeInsets.only(left: 20, right: 20),
+              height: 54,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(50),
+                color: Colors.grey[200],
+                boxShadow: [
+                  BoxShadow(
+                      offset: Offset(0, 10),
+                      blurRadius: 50,
+                      color: Color(0xffEEEEEE)
+                  ),
+                ],
+              ),
+              child: TextField(
+                cursorColor: Color(0xFF0E712C),
+                decoration: InputDecoration(
+                  icon: Icon(
+                    Icons.email,
+                    color: Color(0xFF0E712C),
+                  ),
+                  hintText: "Enter Email",
+                  enabledBorder: InputBorder.none,
+                  focusedBorder: InputBorder.none,
+                ),
+              ),
             ),
+
+            Container(
+              alignment: Alignment.center,
+              margin: EdgeInsets.only(left: 20, right: 20, top: 20),
+              padding: EdgeInsets.only(left: 20, right: 20),
+              height: 54,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(50),
+                color: Color(0xffEEEEEE),
+                boxShadow: [
+                  BoxShadow(
+                      offset: Offset(0, 20),
+                      blurRadius: 100,
+                      color: Color(0xffEEEEEE)
+                  ),
+                ],
+              ),
+              child: TextField(
+                cursorColor: Color(0xFF0E712C),
+                decoration: InputDecoration(
+                  focusColor: Color(0xFF0E712C),
+                  icon: Icon(
+                    Icons.vpn_key,
+                    color: Color(0xFF0E712C),
+                  ),
+                  hintText: "Enter Password",
+                  enabledBorder: InputBorder.none,
+                  focusedBorder: InputBorder.none,
+                ),
+              ),
+            ),
+            Container(
+              margin: EdgeInsets.symmetric(horizontal: 30, vertical: 20),
+              alignment: Alignment.centerRight,
+              child: GestureDetector(
+                onTap: () {
+                  // Write Click Listener Code Here
+                },
+                child: Text("Forget Password?"),
+              ),
+            ),
+
+            GestureDetector(
+              onTap: () {
+                // Write Click Listener Code Here.
+              },
+              child: Container(
+                alignment: Alignment.center,
+                margin: EdgeInsets.only(left: 20, right: 20, top: 70),
+                padding: EdgeInsets.only(left: 20, right: 20),
+                height: 54,
+                decoration: BoxDecoration(
+                  gradient: LinearGradient(colors: [(new  Color(0xFF0E712C)), new Color(0xFF0E712C)],
+                      begin: Alignment.centerLeft,
+                      end: Alignment.centerRight
+                  ),
+                  borderRadius: BorderRadius.circular(50),
+                  color: Colors.grey[200],
+                  boxShadow: [
+                    BoxShadow(
+                        offset: Offset(0, 10),
+                        blurRadius: 50,
+                        color: Color(0xffEEEEEE)
+                    ),
+                  ],
+                ),
+                child: Text(
+                  "LOGIN",
+                  style: TextStyle(
+                      color: Colors.white
+                  ),
+                ),
+              ),
+            ),
+            Container(
+              margin: EdgeInsets.only(top: 10),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text("Don't Have Any Account?  "),
+                  GestureDetector(
+                    child: Text(
+                      "Register Now",
+                      style: TextStyle(
+                          color: Color(0xFF0E712C)
+                      ),
+                    ),
+                    onTap: () {
+                      // Write Tap Code Here.
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => SignUpScreen(),
+                        )
+                      );
+                    },
+                  )
+                ],
+              ),
+            )
           ],
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+        )
+      )
     );
   }
 }

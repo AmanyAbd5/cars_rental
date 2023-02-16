@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        primarySwatch: Colors.blueGrey,
+      //  primarySwatch: Colors.blueGrey,
       ),
       home:         
         AnimatedSplashScreen(
@@ -24,6 +24,6 @@ class MyApp extends StatelessWidget {
             duration: 3000,
             splashTransition: SplashTransition.scaleTransition,
             backgroundColor: Color(0xFF0E712C),
-            nextScreen: MyHomePage(title: 'login')));         
+            nextScreen: LoginScreen()));         
   }
 }

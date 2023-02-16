@@ -22,8 +22,8 @@ class _SplashState extends State<Splash> {
     Navigator.pushReplacement(
         context,
         MaterialPageRoute(
-            builder: (context) => MyHomePage(
-                  title: 'amany',
+            builder: (context) => LoginScreen(
+            //      title: 'amany',
                 )));
   }
 
