@@ -16,13 +16,15 @@ class MyApp extends StatelessWidget {
         title: 'Flutter Demo',
         theme: ThemeData(
             //  primarySwatch: Colors.blueGrey,
+            
             ),
         home: AnimatedSplashScreen(
-            splash: 'images/logo.png',
-            splashIconSize: double.infinity,
+            splash: 'images/vlogo.png',
+            splashIconSize: 100,
             duration: 3000,
             splashTransition: SplashTransition.scaleTransition,
-            backgroundColor: Color(0xFF2A7462),
-            nextScreen: OnboardingScreen()));
+            backgroundColor: Color(0xFF0E712C),
+            nextScreen: OnboardingScreen())
+           );
   }
 }

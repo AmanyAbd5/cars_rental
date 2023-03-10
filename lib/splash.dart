@@ -25,7 +25,7 @@ class _SplashState extends State<Splash> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFF2A7462),
+      backgroundColor: Color(0xFF0E712C),
       body: SafeArea(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -35,8 +35,8 @@ class _SplashState extends State<Splash> {
             ),
             CircleAvatar(
               radius: 160.0,
-              backgroundImage: AssetImage('images/logo.png'),
-              backgroundColor: Color(0xFF2A7462),
+              backgroundImage: AssetImage('images/vlogo.png'),
+              backgroundColor: Color(0xFF0E712C),
             ),
           ],
         ),

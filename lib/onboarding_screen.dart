@@ -1,6 +1,6 @@
-import 'package:betakati_app/login.dart';
-import 'package:flutter/material.dart';
 import 'login.dart';
+import 'package:flutter/material.dart';
+import 'choose.dart';
 
 //  fit: BoxFit.contain,
 class OnboardingScreen extends StatefulWidget {
@@ -65,13 +65,13 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                         style: TextStyle(
                           fontSize: 18,
                           fontWeight: FontWeight.bold,
-                          color: Color.fromARGB(255, 106, 170, 143),
+                          color: Color(0xFF0E712C),
                         ),
                       ),
                       SizedBox(height: 22),
                       Container(
                         decoration: BoxDecoration(
-                          color: Color.fromARGB(255, 186, 231, 209),
+                          color: Color(0xFF0E712C),
                           borderRadius: BorderRadius.circular(20),
                           boxShadow: [
                             BoxShadow(
@@ -89,7 +89,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                           textAlign: TextAlign.center,
                           style: TextStyle(
                             fontSize: 16,
-                            color: Color.fromARGB(255, 106, 170, 143),
+                            color: Color.fromARGB(255, 255, 255, 255),
                           ),
                         ),
                       ),
@@ -114,8 +114,10 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                             curve: Curves.ease,
                           );
                         },
-                        child: Icon(Icons.arrow_back,
-                            size: 30, color: Color.fromARGB(255, 61, 143, 109)),
+                        child: 
+                        Icon(Icons.arrow_back,
+                            size: 30, color: Color(0xFF0E712C)),
+                            
                       )
                     : SizedBox(),
                 _currentPageIndex != _onboardingItems.length - 1
@@ -127,7 +129,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                           );
                         },
                         child: Icon(Icons.arrow_forward,
-                            size: 30, color: Color.fromARGB(255, 61, 143, 109)),
+                            size: 30, color: Color(0xFF0E712C)),
                       )
                     : ElevatedButton(
                         onPressed: () {
@@ -135,11 +137,11 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                             context,
                             MaterialPageRoute(
                                 builder: (BuildContext context) =>
-                                    LoginScreen()),
+                                    choose()),
                           );
                         },
                         style: ElevatedButton.styleFrom(
-                          primary: Color.fromARGB(255, 61, 143, 109),
+                          primary: Color(0xFF0E712C),
                           fixedSize: Size(120, 40), // Specify the button's size
                         ),
                         child: Text(
